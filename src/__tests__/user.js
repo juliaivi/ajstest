@@ -1,13 +1,14 @@
-import loadUser from "../loadUser";//функция
-import { httpGet } from "../http";//заглушка
+import loadUser from '../loadUser';// функция
+import httpGet from '../http';
+// заглушка
 jest.mock('../http');// говорим что этот файл должен стать моком
-//сброс всех моков, значений
+// сброс всех моков, значений
 beforeEach(() => {
-    jest.resetAllMocks();
+  jest.resetAllMocks();
 });
-//перезапускаем
+// перезапускаем
 test('should call loadUser once', () => {
-    httpGet.mockReturnValue(JSON.stringify({}));//в строковом эквиваленте должен вернуть объект
-    loadUser(1);// id
-    expect(httpGet).toBeCalledWith('http://server:8080/users/1');
+  httpGet.mockReturnValue(JSON.stringify({})); // в строковом эквиваленте должен вернуть объект
+  loadUser(1);// id
+  expect(httpGet).toBeCalledWith('http://server:8080/users/1');
 });

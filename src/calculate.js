@@ -9,7 +9,7 @@
 // module.exports = {
 //     calculateTotal
 // }
-//второй вариант экспорт и импорт
+// второй вариант экспорт и импорт
 // export function calculateTotal(purchases) {
 //     let result = 0;
 //     for (let i = 0; i < purchases.length; i++) {
@@ -17,14 +17,12 @@
 //     }
 //     return result;
 // }
-//упрощаем функцимю
-export function calculateTotal(purchases, applyDiscount) {
-    let sum = purchases.reduce((total, item) => {
-        return total + (item.count * item.price);
-    }, 0);
+// упрощаем функцимю
+export default function calculateTotal(purchases, applyDiscount) {
+  const sum = purchases.reduce((total, item) => total + (item.count * item.price), 0);
 
-    if (applyDiscount) {
-        return sum * 0.891;
-    }
-    return sum;
+  if (applyDiscount) {
+    return sum * 0.891;
+  }
+  return sum;
 }

@@ -1,4 +1,4 @@
-//заглушка
-export function httpGet () {
-    return '{}';
+// заглушка
+export default function httpGet() {
+  return '{}';
 }
