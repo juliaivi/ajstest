@@ -1,4 +1,4 @@
-image: Ubuntu 1804
+image: Visual Studio 2017
 stack: node 18
 branches:
   only:
